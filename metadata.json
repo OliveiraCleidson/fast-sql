@@ -1,0 +1,605 @@
+{
+  "databaseName": "mvp-backend",
+  "schemas": [
+    {
+      "schemaName": "public",
+      "tables": [
+        {
+          "tableName": "schema_migrations",
+          "schemaName": "public",
+          "typescriptName": "schema_migrations",
+          "columns": [
+            {
+              "typescriptName": "version",
+              "columnName": "version",
+              "columnType": "int8",
+              "isOptional": false,
+              "isPrimaryKey": true,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "dirty",
+              "columnName": "dirty",
+              "columnType": "bool",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            }
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "constraintName": "schema_migrations_pkey",
+          "constraintType": "PRIMARY KEY",
+          "tableName": "schema_migrations",
+          "columnName": "version"
+        }
+      ]
+    },
+    {
+      "schemaName": "business",
+      "tables": [
+        {
+          "tableName": "companies",
+          "schemaName": "business",
+          "typescriptName": "companies",
+          "columns": [
+            {
+              "typescriptName": "created_at",
+              "columnName": "created_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "updated_at",
+              "columnName": "updated_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "deleted_at",
+              "columnName": "deleted_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "id",
+              "columnName": "id",
+              "columnType": "uuid",
+              "isOptional": false,
+              "isPrimaryKey": true,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "name",
+              "columnName": "name",
+              "columnType": "varchar",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            }
+          ]
+        },
+        {
+          "tableName": "company_information",
+          "schemaName": "business",
+          "typescriptName": "company_information",
+          "columns": [
+            {
+              "typescriptName": "id",
+              "columnName": "id",
+              "columnType": "int4",
+              "isOptional": false,
+              "isPrimaryKey": true,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "company_id",
+              "columnName": "company_id",
+              "columnType": "uuid",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "data",
+              "columnName": "data",
+              "columnType": "jsonb",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "created_at",
+              "columnName": "created_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "updated_at",
+              "columnName": "updated_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "deleted_at",
+              "columnName": "deleted_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            }
+          ]
+        },
+        {
+          "tableName": "company_events",
+          "schemaName": "business",
+          "typescriptName": "company_events",
+          "columns": [
+            {
+              "typescriptName": "id",
+              "columnName": "id",
+              "columnType": "uuid",
+              "isOptional": false,
+              "isPrimaryKey": true,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "company_id",
+              "columnName": "company_id",
+              "columnType": "uuid",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "start_at",
+              "columnName": "start_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "end_at",
+              "columnName": "end_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "localization",
+              "columnName": "localization",
+              "columnType": "point",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "created_at",
+              "columnName": "created_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "updated_at",
+              "columnName": "updated_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "deleted_at",
+              "columnName": "deleted_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "description",
+              "columnName": "description",
+              "columnType": "varchar",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "address",
+              "columnName": "address",
+              "columnType": "varchar",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "name",
+              "columnName": "name",
+              "columnType": "varchar",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            }
+          ]
+        },
+        {
+          "tableName": "groups",
+          "schemaName": "business",
+          "typescriptName": "groups",
+          "columns": [
+            {
+              "typescriptName": "id",
+              "columnName": "id",
+              "columnType": "int4",
+              "isOptional": false,
+              "isPrimaryKey": true,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "created_at",
+              "columnName": "created_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "updated_at",
+              "columnName": "updated_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "deleted_at",
+              "columnName": "deleted_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "name",
+              "columnName": "name",
+              "columnType": "varchar",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            }
+          ]
+        },
+        {
+          "tableName": "events_groups",
+          "schemaName": "business",
+          "typescriptName": "events_groups",
+          "columns": [
+            {
+              "typescriptName": "group_id",
+              "columnName": "group_id",
+              "columnType": "int4",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "event_id",
+              "columnName": "event_id",
+              "columnType": "uuid",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "created_at",
+              "columnName": "created_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "deleted_at",
+              "columnName": "deleted_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            }
+          ]
+        },
+        {
+          "tableName": "event_positions",
+          "schemaName": "business",
+          "typescriptName": "event_positions",
+          "columns": [
+            {
+              "typescriptName": "end_at",
+              "columnName": "end_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "id",
+              "columnName": "id",
+              "columnType": "uuid",
+              "isOptional": false,
+              "isPrimaryKey": true,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "event_id",
+              "columnName": "event_id",
+              "columnType": "uuid",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "group_id",
+              "columnName": "group_id",
+              "columnType": "int4",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "position_id",
+              "columnName": "position_id",
+              "columnType": "int4",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "start_at",
+              "columnName": "start_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "hourly_rate",
+              "columnName": "hourly_rate",
+              "columnType": "numeric",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "created_at",
+              "columnName": "created_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "updated_at",
+              "columnName": "updated_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "deleted_at",
+              "columnName": "deleted_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "description",
+              "columnName": "description",
+              "columnType": "varchar",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            }
+          ]
+        },
+        {
+          "tableName": "positions",
+          "schemaName": "business",
+          "typescriptName": "positions",
+          "columns": [
+            {
+              "typescriptName": "id",
+              "columnName": "id",
+              "columnType": "int4",
+              "isOptional": false,
+              "isPrimaryKey": true,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "default_hourly_rate",
+              "columnName": "default_hourly_rate",
+              "columnType": "numeric",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "created_at",
+              "columnName": "created_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "updated_at",
+              "columnName": "updated_at",
+              "columnType": "timestamp",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "deleted_at",
+              "columnName": "deleted_at",
+              "columnType": "timestamp",
+              "isOptional": true,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            },
+            {
+              "typescriptName": "name",
+              "columnName": "name",
+              "columnType": "varchar",
+              "isOptional": false,
+              "isPrimaryKey": false,
+              "isLogicalDelete": false
+            }
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "constraintName": "companies_pkey",
+          "constraintType": "PRIMARY KEY",
+          "tableName": "companies",
+          "columnName": "id"
+        },
+        {
+          "constraintName": "company_information_pkey",
+          "constraintType": "PRIMARY KEY",
+          "tableName": "company_information",
+          "columnName": "id"
+        },
+        {
+          "constraintName": "uq_companies_information_company_id",
+          "constraintType": "UNIQUE",
+          "columnNames": [
+            "company_id",
+            "deleted_at"
+          ]
+        },
+        {
+          "constraintName": "fk_companies_information_company_id",
+          "constraintType": "FOREIGN KEY",
+          "tableName": "company_information",
+          "columnName": "company_id",
+          "referencedSchema": "business",
+          "referencedTable": "companies",
+          "referencedColumn": "id"
+        },
+        {
+          "constraintName": "company_events_pkey",
+          "constraintType": "PRIMARY KEY",
+          "tableName": "company_events",
+          "columnName": "id"
+        },
+        {
+          "constraintName": "fk_companies_events_company_id",
+          "constraintType": "FOREIGN KEY",
+          "tableName": "company_events",
+          "columnName": "company_id",
+          "referencedSchema": "business",
+          "referencedTable": "companies",
+          "referencedColumn": "id"
+        },
+        {
+          "constraintName": "groups_pkey",
+          "constraintType": "PRIMARY KEY",
+          "tableName": "groups",
+          "columnName": "id"
+        },
+        {
+          "constraintName": "uq_events_position_groups_group_id_event_id",
+          "constraintType": "UNIQUE",
+          "columnNames": [
+            "group_id",
+            "event_id",
+            "deleted_at"
+          ]
+        },
+        {
+          "constraintName": "fk_events_position_groups_group_id",
+          "constraintType": "FOREIGN KEY",
+          "tableName": "events_groups",
+          "columnName": "group_id",
+          "referencedSchema": "business",
+          "referencedTable": "groups",
+          "referencedColumn": "id"
+        },
+        {
+          "constraintName": "fk_events_position_groups_event_id",
+          "constraintType": "FOREIGN KEY",
+          "tableName": "events_groups",
+          "columnName": "event_id",
+          "referencedSchema": "business",
+          "referencedTable": "company_events",
+          "referencedColumn": "id"
+        },
+        {
+          "constraintName": "positions_pkey",
+          "constraintType": "PRIMARY KEY",
+          "tableName": "positions",
+          "columnName": "id"
+        },
+        {
+          "constraintName": "uq_position_name",
+          "constraintType": "UNIQUE",
+          "columnNames": [
+            "name",
+            "deleted_at"
+          ]
+        },
+        {
+          "constraintName": "event_positions_pkey",
+          "constraintType": "PRIMARY KEY",
+          "tableName": "event_positions",
+          "columnName": "id"
+        },
+        {
+          "constraintName": "fk_events_position_event_id",
+          "constraintType": "FOREIGN KEY",
+          "tableName": "event_positions",
+          "columnName": "event_id",
+          "referencedSchema": "business",
+          "referencedTable": "company_events",
+          "referencedColumn": "id"
+        },
+        {
+          "constraintName": "fk_events_position_group_id",
+          "constraintType": "FOREIGN KEY",
+          "tableName": "event_positions",
+          "columnName": "group_id",
+          "referencedSchema": "business",
+          "referencedTable": "groups",
+          "referencedColumn": "id"
+        },
+        {
+          "constraintName": "fk_events_position_position_id",
+          "constraintType": "FOREIGN KEY",
+          "tableName": "event_positions",
+          "columnName": "position_id",
+          "referencedSchema": "business",
+          "referencedTable": "positions",
+          "referencedColumn": "id"
+        }
+      ]
+    }
+  ]
+}

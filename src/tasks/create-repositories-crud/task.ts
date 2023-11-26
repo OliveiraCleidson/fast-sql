@@ -1,4 +1,5 @@
-import { DatabaseTS, Task } from '~/types/task';
+import { DatabaseTS } from '~/database/contracts';
+import { Task } from '~/types/task';
 
 type Command = {
   database: DatabaseTS;
